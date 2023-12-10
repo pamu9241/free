@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/event1(wedding).css">
+    <link rel="stylesheet" href="../css/event2(workshops).css">
+    <script src="../script/main.js" defer></script>
+    <title>Bookings</title>
+</head>
+
+<body>
+    <section>
+        <!--NAvigation Bar-->
+        <nav class="nav1"> 
+            <div>
+                <ul class="h_ul">
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="../html/home.html">Home</a></h2></li>
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="../html/branches.html">Branches</h2></a></li>
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="../html/Adventures.html">Adventures</h2></a></li>
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="./Restaurants.html">Restaurants</a></h2></a>
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="../html/Weddings.html">Weddings</a></h2></li><!--Event_1-->
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="../html/Workshops.html">Workshops</a></h2></li><!--Event_2-->
+                    <li class="nav_li"><h2 class="nav_h"><a class="nav_a" href="../html/bookings.html">Bookings</a></li></h2>
+                </ul>
+            </div>
+            <div><img class="logo" src="../img/logo.png"></div>
+        </nav>
+    </section>
+
+
+
+            <!--Rooms Booking-->
+
+
+    <form id="bookingForm"> 
+        <br><h2 class="roombooking">Room Bookings</h2>
+        <div class="formCon">
+
+            <div class="formDivs">
+                Name :
+                <br> &emsp;<input id="name" type="text" name="Fname" size="25"  required="required"><br><br>
+            </div>
+            
+            <div class="formDivs" >       
+                NIC:
+                <br> &emsp;<input id="nic" type="text" name="nic" size="25" maxlength="12"required="required"><br><br>
+            </div>
+
+            <div class="formDivs">
+                Address:
+                <br> &emsp;<input id="address" type="text" name="address" size="25" required="required"><br>
+            </div>
+           
+            <div class="formDivs">
+                Checkin Date :
+                <br>&emsp;<input id="checkindate" type="date" name="checkindate" required="required"><br><BR>
+            </div>  
+
+            <div class="formDivs">
+                Checkout Date :
+                <br>&emsp;<input id="checkoutdate" type="date" name="checkoutdate" required="required"><br><BR>
+            </div>  
+ 
+            <div class="formDivs">
+                How many days in here :
+                <br>&emsp;<input id="date" type="number" name="date" min="0"><br><BR>
+            </div> 
+
+            <div class="formDivs">
+                Contact Number :
+                <br>&emsp;<input id="phone" type="tel" name="tel" size="25" maxlength="10" required="required" required pattern="[0-9]{10}"><br><BR>
+            </div>
+            
+            <div class="formDivs">
+                E mail : 
+                <br>&emsp;<input id="email" type="email" size="25" name="email" required><br><BR>
+            </div>
+            
+            <div class="formDivs">
+                Promo Code :
+                <br>&emsp;<input id="promoCode" type="text" name="prom">
+            </div>
+            
+            <div class="formDivs">
+                Number of rooms:<br>&emsp;
+                <input type="checkbox" value="single" name="single">Single: <input type="number" id="singleRooms" min="0" ><br>&emsp;
+                <input type="checkbox" value="double" name="double">Double: <input type="number" id="doubleRooms" min="0" ><br>&emsp;
+                <input type="checkbox" value="triple" name="triple">Triple: <input type="number" id="tripleRooms" min="0" ><br><br>
+            </div>
+            
+            <div class="formDivs">
+                Extra Requirements :
+                <br>&emsp;
+                <input id="wifi" type="checkbox" name="wifi">Wifi<br>&emsp;
+                <input id="pool" type="checkbox" name="pool">Pool<br>&emsp;
+                <input id="garden" type="checkbox" name="garden">Garden<br>&emsp;
+                <input id="bed" type="checkbox" value="extrabed" name="extrabed">Extra Bed <br>&emsp;
+                <input type="number" id="beds"><br><br>
+            </div>
+
+            <div class="formDivs"> 
+            No of people
+                <ul class="">
+                    <li>Adults:</li>
+                        <input type="number" id="adultsInput" min="0" value="0" required="required">
+                    <li>Children:
+                        <ul>
+                            <li>Above 5 years<input type="number" id="childrenInput" min="0" value="0" required="required"></li>
+                       </ul>
+                    </li>
+               </ul>           
+            </div>
+
+
+            <div id="currentBooking">
+                <h2 class="perInfo">Current Booking</h2>
+                <p>Total Cost: <span id="currentBookingCost">0.00</span></p>
+            </div>
+
+            <!-- Display Overall Booking Information -->
+            <div id="overallBooking">
+                <h2 class="perInfo">Overall Booking</h2>
+               <p>Total Cost: <span id="overallBookingCost">0.00</span></p>
+            </div>
+
+            <div>
+                <!--This is Div for the align the buttons-->                
+            </div>
+
+            <div class="RoomBtnDiv">
+            <!-- Button in Rooms Bookings-->
+                <button id="roomBtn" type="button" onclick="bookRoomNow()">Book Now</button>
+                <button id="addToFavoritesBtn" onclick="roomsaddToFavorites()">Add to Favorites</button>
+                <button id="checkLoyaltyPointsBtn" onclick="checkLoyaltyPoints()">Check Loyalty Points</button>
+            </div>
+
+           
+        </div>
+    </form>
+
+
+
+
+
+                <!--Adventure Booking (diving)-->
+    <form id="adventureBookingForm">
+        <h2 class="diving">Diving Booking</h2>
+        <div class="formCon1">        
+            <div class="formDivs">
+                Name:<br>
+                &emsp;<input type="text" id="username" name="name" required><br><br>
+            </div>
+
+            <div class="formDivs">
+                Phone Number:<br>
+                &emsp;<input type="tel" id="userphoneNumber" name="phoneNumber" required pattern="[0-9]{10}"><br><br>
+            </div>
+
+            <div class="formDivs">
+                Date:<br>
+                &emsp;<input type="date" id="bookingdate" name="date" required> <br><br>     
+            </div>
+
+            <div class="formDivs">     
+                Mail:<br>
+                &emsp;<input type="email" id="usermail" name="mail" required><br><br>
+            </div>
+  
+            <div class="formDivs">
+                Local Adults:<br>
+                &emsp;<input type="number" id="localAdults" name="localAdults" min="0" value="0"><br><br>
+            </div>
+  
+            <div class="formDivs">
+                Local Kids:<br>
+                &emsp;<input type="number" id="localKids" name="localKids" min="0" value="0"><br><br>
+            </div>
+  
+            <div class="formDivs">
+                Foreign Adults:<br>
+                &emsp;<input type="number" id="foreignAdults" name="foreignAdults" min="0" value="0"><br><br>
+            </div>
+  
+            <div class="formDivs">
+                Foreign Kids:<br>
+                &emsp;<input type="number" id="foreignKids" name="foreignKids" min="0" value="0"><br><br>
+            </div>
+        </div><br><br>
+        
+        <div class="formCon2">
+            <div class="formDivs">
+                &spades;Guide during the diving session, <br>
+                
+                &emsp;<input type="checkbox" id="extraChargeAdult" name="extraChargeAdult">
+                Adult – 1000LKR extra will be charged<br>
+                
+                &emsp;<input type="checkbox" id="extraChargeKids" name="extraChargeKids">
+                Kid – 500LKR extra will be charged 
+            </div>
+        </div><br>
+
+        <div class="AdvBtnDiv">
+            <button id="advnetureBtn" type="button" onclick="calculateAdventureCost()">Book Adventure</button><br><br>
+        </div>
+        </form>
+</body>
+</html>
+
